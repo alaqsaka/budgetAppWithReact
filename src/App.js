@@ -3,11 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Budget from "./components/Budget";
 import Remaining from "./components/Remaining";
 import ExpenseTotal from "./components/ExpenseTotal";
+import "./app.css";
 
 const App = () => {
   return (
     <div className="container">
-      <h1 className="mt-3">My Budget Planner</h1>
+      <h1 className="mt-3">BudgetPrep</h1>
+      <p>budg·et</p>
+      <p>
+        1. an estimate of income and expenditure for a set period of time. "keep
+        within the household budget"
+        <br></br>
+        2. ARCHAIC a quantity of material, typically that which is written or
+        printed
+      </p>
+      <h2>Start prepping your budget now!</h2>
       <div className="row mt-3">
         <div className="col-sm">
           <Budget /> {/*Component Budget */}

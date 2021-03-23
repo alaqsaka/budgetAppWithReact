@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+    background-color: #202124;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container h1 {
+    font-weight: bold;
+    color: rgba(#fff, 0.96);
+}
+
+.container h2{
+    display: block;
+    margin-top: 5rem;
+    
+}
