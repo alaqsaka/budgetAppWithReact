@@ -6,38 +6,48 @@ import ExpenseTotal from "./components/ExpenseTotal";
 import ExpenseItem from "./components/ExpenseItem";
 import "./app.css";
 import ExpenseList from "./components/ExpenseList";
+import AddExpenseForm from "./components/AddExpenseForm";
+import { AppProvider } from "./context/AppContext";
 
 const App = () => {
   return (
-    <div className="container">
-      <h1 className="mt-3">BudgetPrep</h1>
-      <p>budg·et</p>
-      <p>
-        1. an estimate of income and expenditure for a set period of time. "keep
-        within the household budget"
-        <br></br>
-        2. ARCHAIC a quantity of material, typically that which is written or
-        printed
-      </p>
-      <h2>Start prepping your budget now!</h2>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <Budget /> {/*Component Budget */}
+    <AppProvider>
+      <div className="container">
+        <h1 className="mt-3">BudgetPrep</h1>
+        <p>budg·et</p>
+        <p>
+          1. an estimate of income and expenditure for a set period of time.
+          "keep within the household budget"
+          <br></br>
+          2. ARCHAIC a quantity of material, typically that which is written or
+          printed
+        </p>
+        <h2>Start prepping your budget now!</h2>
+        <div className="row mt-3">
+          <div className="col-sm">
+            <Budget /> {/*Component Budget */}
+          </div>
+          <div className="col-sm">
+            <Remaining /> {/*Component Remaining*/}
+          </div>
+          <div className="col-sm">
+            <ExpenseTotal /> {/*Component ExpenseTotal */}
+          </div>
         </div>
-        <div className="col-sm">
-          <Remaining /> {/*Component Remaining*/}
+        <h3 className="mt-3">Expenses</h3>
+        <div className="row mt-3">
+          <div className="col-sm">
+            <ExpenseList />
+          </div>
         </div>
-        <div className="col-sm">
-          <ExpenseTotal /> {/*Component ExpenseTotal */}
+        <h3 className="mt-3">Add Expense</h3>
+        <div className="mt-3">
+          <div className="col-sm">
+            <AddExpenseForm />
+          </div>
         </div>
       </div>
-      <h3 className="mt-3">Expenses</h3>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <ExpenseList />
-        </div>
-      </div>
-    </div>
+    </AppProvider>
   );
 };
 
