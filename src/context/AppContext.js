@@ -2,11 +2,20 @@ import { createContext, useReducer } from "react";
 
 const AppReducer = (state, action) => {
   switch (action.type) {
+    case "ADD_EXPENSE":
+      return {
+        ...state, // copying the existing state
+        expenses: [...state.expenses, action.payload], // overwrite that with a new expenses object
+        // Current what's in the array // will be added to last item of the array
+      };
     default:
       return state;
   }
 };
 
+{
+  /* Ini nilai awal saat pertama kali progam di-start  */
+}
 const initialState = {
   budget: 200000,
   expenses: [
