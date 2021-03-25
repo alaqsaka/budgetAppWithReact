@@ -1,12 +1,20 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-const AppReducer = (state, action) => {
+export const AppReducer = (state, action) => {
   switch (action.type) {
     case "ADD_EXPENSE":
       return {
         ...state, // copying the existing state
         expenses: [...state.expenses, action.payload], // overwrite that with a new expenses object
         // Current what's in the array // will be added to last item of the array
+      };
+    case "DELETE_EXPENSE":
+      return {
+        ...state,
+        expenses: state.expenses.filter(
+          (expense) => expense.id !== action.payload
+        ),
       };
     default:
       return state;
